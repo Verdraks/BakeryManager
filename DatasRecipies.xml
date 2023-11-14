@@ -1,0 +1,54 @@
+<DatasRecipies>
+	<Recipie>
+		<name>Bread</name>
+		<cost>1.5</cost>
+		<Ingredient>
+			<name>Flour</name>		
+			<quantity>1</quantity>
+		</Ingredient>
+		<Ingredient>
+			<name>Baking powder</name>
+			<quantity>1</quantity>
+		</Ingredient>
+	</Recipie>
+	<Recipie>
+		<name>Cheese Cake</name>
+		<cost>3.5</cost>
+		<Ingredient>
+			<name>Flour</name>		
+			<quantity>1</quantity>
+		</Ingredient>
+		<Ingredient>
+			<name>Cheese</name>
+			<quantity>1</quantity>
+		</Ingredient>
+		<Ingredient>
+			<name>Egg</name>
+			<quantity>1</quantity>
+		</Ingredient>
+	</Recipie>
+	<Recipie>
+		<name>Olive Cake</name>
+		<cost>5</cost>
+		<Ingredient>
+			<name>Flour</name>		
+			<quantity>1</quantity>
+		</Ingredient>
+		<Ingredient>
+			<name>Cheese</name>
+			<quantity>1</quantity>
+		</Ingredient>
+		<Ingredient>
+			<name>Olive</name>
+			<quantity>1</quantity>
+		</Ingredient>
+		<Ingredient>
+			<name>Egg</name>
+			<quantity>1</quantity>
+		</Ingredient>
+		<Ingredient>
+			<name>Baking powder</name>
+			<quantity>1</quantity>
+		</Ingredient>
+	</Recipie>
+</DatasRecipies>

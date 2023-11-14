@@ -6,12 +6,11 @@
 class DataReader
 {
 public:
-	static map <string, float> dataIngredient;
-	static map <string, map <string, int>> costIngredientRecipies;
-	static map <string, float> priceRecipies;
-	
-
-	static void ReadingDataGame(string path);
+	static map<string, float> dataIngredient;
+	static map<string, map<string, float>> ingredientNeedRecipies;
+	static map<string, float> priceRecipies;
+	static void ReadingDataGame(string path = "");
+	static float ConvertStrToFloat(string price);
 };
 
 #endif

@@ -21,7 +21,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="BackeryManagerFiles.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="MainProgram.cpp">
