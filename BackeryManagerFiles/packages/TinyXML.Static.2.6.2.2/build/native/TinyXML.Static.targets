@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <IncludePath>$(MSBuildThisFileDirectory)tinyxml;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemGroup>
+    <NuGetExConnentFiles Include="$(MSBuildThisFileDirectory)tinyxml\*.cpp">
+      <NuGetPackageId>$(MSBuildThisFileName)</NuGetPackageId>
+      <BuildAction>ClCompile</BuildAction>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>false</ConformanceMode>
+      <ObjectFileName>$(IntDir)$(MSBuildThisFileName)\</ObjectFileName>
+    </NuGetExConnentFiles>
+  </ItemGroup>
+</Project>
