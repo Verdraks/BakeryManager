@@ -20,8 +20,9 @@ public:
 	void WriteText();
 
 private:
-	static ConsoleManager* instance;
 	ConsoleManager();
+	static ConsoleManager* instance;
+	
 
 	vector<string> txts;
 	bool isWrittingStep = true;

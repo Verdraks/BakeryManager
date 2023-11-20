@@ -3,12 +3,13 @@
 #include "MainManager.h"
 #include <conio.h>
 
-int main(int argc, char* argv[])
+int main(/*int argc, char* argv[]*/)
 {
     string paths[] = { "F:\\Projects\\Programmation\\C++\\BakeryManager\\DatasRecipies.xml","F:\\Projects\\Programmation\\C++\\BakeryManager\\DatasIngredients.xml"};
 
     DataReader::GetInstance()->ReadingDataGame(paths);
-    MainManager::GetInstance()->ManageGame();
+    MainManager::GetInstance();//->ManageGame();
+
     /*while (true) {
         auto c = _getch();
         cout << c << endl;

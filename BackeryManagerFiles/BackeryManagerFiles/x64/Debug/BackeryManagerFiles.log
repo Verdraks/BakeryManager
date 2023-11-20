@@ -1,4 +1,6 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : Le processus ne peut pas accéder au fichier 'd:\projects\programmation\c++\bakerymanager\backerymanagerfiles\backerymanagerfiles\x64\debug\backerym.73299ca2.tlog\cl.command.1.tlog', car il est en cours d'utilisation par un autre processus.
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : Le processus ne peut pas accéder au fichier 'd:\projects\programmation\c++\bakerymanager\backerymanagerfiles\backerymanagerfiles\x64\debug\backerym.73299ca2.tlog\cl.write.1.tlog', car il est en cours d'utilisation par un autre processus.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : Le processus ne peut pas accéder au fichier 'd:\projects\programmation\c++\bakerymanager\backerymanagerfiles\backerymanagerfiles\x64\debug\backerym.73299ca2.tlog\link-cvtres.read.1.tlog', car il est en cours d'utilisation par un autre processus.
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : Le processus ne peut pas accéder au fichier 'd:\projects\programmation\c++\bakerymanager\backerymanagerfiles\backerymanagerfiles\x64\debug\backerym.73299ca2.tlog\link.write.1.tlog', car il est en cours d'utilisation par un autre processus.
   ConsoleManager.cpp
   Main.cpp
   DataReader.cpp
@@ -11,7 +13,5 @@ D:\Projects\Programmation\C++\BakeryManager\BackeryManagerFiles\BackeryManagerFi
   tinyxmlerror.cpp
   tinyxmlparser.cpp
   Génération de code en cours...
-ConsoleManager.obj : error LNK2019: symbole externe non résolu "private: __cdecl ConsoleManager::ConsoleManager(void)" (??0ConsoleManager@@AEAA@XZ) référencé dans la fonction "public: static class ConsoleManager * __cdecl ConsoleManager::GetInstance(void)" (?GetInstance@ConsoleManager@@SAPEAV1@XZ)
-ConsoleManager.obj : error LNK2001: symbole externe non résolu "private: static class ConsoleManager * ConsoleManager::instance" (?instance@ConsoleManager@@0PEAV1@EA)
 MainManager.obj : error LNK2001: symbole externe non résolu "private: static class MainManager * MainManager::instance" (?instance@MainManager@@0PEAV1@EA)
-D:\Projects\Programmation\C++\BakeryManager\BackeryManagerFiles\x64\Debug\BackeryManagerFiles.exe : fatal error LNK1120: 3 externes non résolus
+D:\Projects\Programmation\C++\BakeryManager\BackeryManagerFiles\x64\Debug\BackeryManagerFiles.exe : fatal error LNK1120: 1 externes non résolus

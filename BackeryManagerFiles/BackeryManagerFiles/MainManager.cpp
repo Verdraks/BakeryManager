@@ -2,6 +2,8 @@
 #include "DataReader.h"
 #include "ConsoleManager.h"
 
+MainManager* MainManager::instance = NULL;
+
 MainManager::MainManager()
 {
 	srand(time(NULL));

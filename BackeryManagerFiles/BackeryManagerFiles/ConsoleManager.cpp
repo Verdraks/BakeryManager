@@ -1,6 +1,7 @@
 #include "ConsoleManager.h"
 #include "MainManager.h"
 
+ConsoleManager* ConsoleManager::instance = NULL;
 
 ConsoleManager* ConsoleManager::GetInstance()
 {

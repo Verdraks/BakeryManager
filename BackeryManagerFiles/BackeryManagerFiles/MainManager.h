@@ -20,7 +20,7 @@ public:
 		GameOver,
 	};
 
-
+	
 	void RefreshPrice();
 	void ManageGame();
 	void InteractionGame();
