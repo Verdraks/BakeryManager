@@ -47,9 +47,6 @@ bool Player::CheckFurnitureRequired(map<string,int> recipe) {
 void Player::ShowInventory() {
 	for (auto x : this->inventory)
 	{
-		cout << x.first  // string (key)
-			<< ':'
-			<< x.second // string's value 
-			<< endl;
+		cout << x.first << ':' << x.second << endl;
 	}
 }

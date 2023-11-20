@@ -1,13 +1,21 @@
 #include "DataReader.h"
 #include "Player.h"
+#include "MainManager.h"
 
 int main(int argc, char* argv[])
 {
-    //DataReader::GetInstance()->ReadingDataGame();
-    Player player = *new Player();
+    string paths[] = { "F:\\Projects\\Programmation\\C++\\BakeryManager\\DatasRecipies.xml","F:\\Projects\\Programmation\\C++\\BakeryManager\\DatasIngredients.xml"};
+
+    DataReader::GetInstance()->ReadingDataGame(paths);
+    MainManager *manage = new MainManager();
+    manage->ManageGame();
+    //cout << manage->CalculRandomPrice() << endl;
+
+
+    /*Player player = *new Player();
     player.TryBuySmth("riz", 10,1);
     player.ShowInventory();
-    cout << player.CheckFurnitureRequired({ {"riz", 5},{"olive",5} });S
+    std::cout << player.CheckFurnitureRequired({ {"riz", 5},{"olive",5} });*/
 
     /*if (argc == 2) {
         DataReader::GetInstance()->ReadingDataGame(argv[1]);

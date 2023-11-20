@@ -2,8 +2,10 @@
 #define GlobalHeader_h
 
 #include<map>
-#include <string>
+#include <thread>
+#include <cstdlib>
 #include <vector>
+#include <string>
 #include <tinyxml.h>
 #include <iostream>
 using namespace std;

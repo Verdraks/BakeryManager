@@ -1,10 +1,42 @@
 <DatasIngredients>
 	<Ingredient>
 			<name>
-				
+				Flour
 			</name>
 			<price>
-				
+				0.1
 			</price>
-		</Ingredient>
+	</Ingredient>
+	<Ingredient>
+			<name>
+				Cheese
+			</name>
+			<price>
+				0.1
+			</price>
+	</Ingredient>
+	<Ingredient>
+			<name>
+				Egg
+			</name>
+			<price>
+				0.1
+			</price>
+	</Ingredient>
+	<Ingredient>
+			<name>
+				Baking powder
+			</name>
+			<price>
+				0.1
+			</price>
+	</Ingredient>
+	<Ingredient>
+			<name>
+				Olive
+			</name>
+			<price>
+				0.1
+			</price>
+	</Ingredient>
 </DatasIngredients>
