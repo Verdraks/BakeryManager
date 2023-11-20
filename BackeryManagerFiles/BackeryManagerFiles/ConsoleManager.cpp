@@ -2,6 +2,7 @@
 #include "MainManager.h"
 
 ConsoleManager* ConsoleManager::instance = NULL;
+ConsoleManager::ConsoleManager() {}
 
 ConsoleManager* ConsoleManager::GetInstance()
 {
@@ -43,7 +44,10 @@ void ConsoleManager::SelectTxtIntro() {
 }
 
 void ConsoleManager::SelectTxtBuy() {
-	this->txts = { "vdsgdsg","fesfse" };
+	this->txts = { "Today's price:"};
+	for (auto x : MainManager::GetInstance()->currentPriceIngredient) {
+		this->txts.push_back(x.first + " : " + to_string(x.second));
+	}
 	this->WriteText();
 }
 
@@ -70,7 +74,7 @@ void ConsoleManager::SelectTxtGameOver() {
 void ConsoleManager::ShowConsole()
 {
 	system("cls");
-	//this->SelectText();
+	this->SelectText();
 }
 
 void ConsoleManager::WriteText()
@@ -88,5 +92,5 @@ void ConsoleManager::WriteText()
 		}
 		cout << endl;
 	}
-	isWrittingStep = false;
+	//isWrittingStep = false;
 }

@@ -1,17 +1,3 @@
-﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : Le processus ne peut pas accéder au fichier 'd:\projects\programmation\c++\bakerymanager\backerymanagerfiles\backerymanagerfiles\x64\debug\backerym.73299ca2.tlog\cl.write.1.tlog', car il est en cours d'utilisation par un autre processus.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : Le processus ne peut pas accéder au fichier 'd:\projects\programmation\c++\bakerymanager\backerymanagerfiles\backerymanagerfiles\x64\debug\backerym.73299ca2.tlog\link-cvtres.read.1.tlog', car il est en cours d'utilisation par un autre processus.
-C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppClean.targets(77,5): warning : Le processus ne peut pas accéder au fichier 'd:\projects\programmation\c++\bakerymanager\backerymanagerfiles\backerymanagerfiles\x64\debug\backerym.73299ca2.tlog\link.write.1.tlog', car il est en cours d'utilisation par un autre processus.
-  ConsoleManager.cpp
-  Main.cpp
-  DataReader.cpp
-  MainManager.cpp
-D:\Projects\Programmation\C++\BakeryManager\BackeryManagerFiles\BackeryManagerFiles\MainManager.cpp(7,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  Player.cpp
-  Génération de code en cours...
-  tinystr.cpp
-  tinyxml.cpp
-  tinyxmlerror.cpp
-  tinyxmlparser.cpp
-  Génération de code en cours...
-MainManager.obj : error LNK2001: symbole externe non résolu "private: static class MainManager * MainManager::instance" (?instance@MainManager@@0PEAV1@EA)
-D:\Projects\Programmation\C++\BakeryManager\BackeryManagerFiles\x64\Debug\BackeryManagerFiles.exe : fatal error LNK1120: 1 externes non résolus
+﻿  MainManager.cpp
+C:\Users\o_martinez1\Documents\BakeryManager\BackeryManagerFiles\BackeryManagerFiles\MainManager.cpp(9,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  BackeryManagerFiles.vcxproj -> C:\Users\o_martinez1\Documents\BakeryManager\BackeryManagerFiles\x64\Debug\BackeryManagerFiles.exe

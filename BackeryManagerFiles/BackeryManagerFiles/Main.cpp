@@ -1,7 +1,6 @@
 #include "DataReader.h"
 #include "Player.h"
 #include "MainManager.h"
-#include <conio.h>
 
 int main(/*int argc, char* argv[]*/)
 {
@@ -10,10 +9,10 @@ int main(/*int argc, char* argv[]*/)
     DataReader::GetInstance()->ReadingDataGame(paths);
     MainManager::GetInstance();//->ManageGame();
 
-    /*while (true) {
+    while (true) {
         auto c = _getch();
         cout << c << endl;
-    }*/
+    }
 
     /*Player player = *new Player();
     player.TryBuySmth("riz", 10,1);

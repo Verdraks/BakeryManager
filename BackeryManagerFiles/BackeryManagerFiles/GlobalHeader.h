@@ -8,6 +8,7 @@
 #include <string>
 #include <tinyxml.h>
 #include <iostream>
+#include <conio.h>
 using namespace std;
 
 #endif GlobalHeader_h

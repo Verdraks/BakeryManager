@@ -25,7 +25,7 @@ void MainManager::ManageGame()
 	do 
 	{
 		ConsoleManager::GetInstance()->ShowConsole();
-		//this->IncrementDay();
+		this->InteractionGame();
 		this_thread::sleep_for(100ms);
 	} while (!this->exitGame);
 }
@@ -55,21 +55,90 @@ void MainManager::SwitchState()
 }
 
 void MainManager::InteractionGame() {
+	int key = 0;
 	switch (this->currentState)
 	{
 	case StateGame::Intro:
+		while (key != 13) {
+			key = _getch();
+		}
+		this->SwitchState();
 		break;
 	case StateGame::Buy:
+		this->BuyState();
 		break;
 	case StateGame::Prepare:
 		break;
 	case StateGame::Sell:
 		break;
 	case StateGame::Recap:
+		while (key != 13) {
+			key = _getch();
+		}
+		this->IncrementDay();
 		break;
 	case StateGame::GameOver:
+		while (key != 13) {
+			key = _getch();
+		}
+		this->exitGame = true;
 		break;
 	}
+}
+
+void MainManager::BuyState() {
+	int key = 0;
+	bool finished = false;
+	while (!finished) {
+		int quantity = -1;
+		auto tmpValues = this->currentPriceIngredient.begin();
+		key = _getch();
+		switch (key) {
+		case 38:
+			this->CheckInput(&quantity,tmpValues,&finished);
+			
+			break;
+		case 130:
+			tmpValues++;
+			this->CheckInput(&quantity, tmpValues, &finished);
+			break;
+		case 34:
+			tmpValues++;
+			this->CheckInput(&quantity, tmpValues, &finished);
+			break;
+		case 39:
+			tmpValues++;
+			this->CheckInput(&quantity, tmpValues, &finished);
+			break;
+		case 40:
+			tmpValues++;
+			this->CheckInput(&quantity, tmpValues, &finished);
+			break;
+		default:
+			break;
+		}
+	}
+}
+
+void MainManager::CheckInput(int *quantityInput, map<string,float>::iterator tmpValues,bool *finished) {
+	*quantityInput = stoi(to_string(cin.get()));
+
+	if (*quantityInput < 0) {
+		cout << "Error Syntax !" << endl;
+		this->CheckInput(quantityInput,tmpValues,finished);
+		return;
+	}
+	this->player.TryBuySmth(tmpValues->first, tmpValues->second, *quantityInput);
+
+	cout << "Would you buy others things ? 0:No, 1:Yes" << endl;
+	string tmp = to_string(cin.get());
+	while ( tmp != "0" || "1") {
+		cout << "Error Syntax !" << endl;
+		tmp = to_string(cin.get());
+	}
+	*finished = (tmp == "1");
+
+
 }
 
 void MainManager::SetGameOver()
@@ -79,7 +148,7 @@ void MainManager::SetGameOver()
 
 MainManager::StateGame MainManager::GetState()
 {
-	return MainManager::StateGame();
+	return this->currentState;
 }
 
 void MainManager::RefreshPrice()

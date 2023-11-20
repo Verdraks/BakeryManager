@@ -24,6 +24,8 @@ public:
 	void RefreshPrice();
 	void ManageGame();
 	void InteractionGame();
+	void BuyState();
+	void CheckInput(int* quantityInput, map<string, float>::iterator tmpValues, bool* finished);
 	void SwitchState();
 	int GetDays();
 

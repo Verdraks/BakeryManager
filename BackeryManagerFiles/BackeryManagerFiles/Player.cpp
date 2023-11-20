@@ -25,7 +25,7 @@ void Player::RemoveFurnitureInventory(string obj, const int quantity)
 	this->inventory[obj] = this->inventory.at(obj) - quantity;
 }
 
-void Player::TryBuySmth(string obj, int quantity,float price)
+void Player::TryBuySmth(string obj,float price, int quantity)
 {
 	if (this->money >= quantity * price) {
 		this->BuyFurniture(quantity * price);
