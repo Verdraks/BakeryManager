@@ -6,8 +6,9 @@
 class ConsoleManager
 {
 public:
-	void SetGameOver();
-	void SwitchState();
+
+	static ConsoleManager* GetInstance();
+
 	void SelectText();
 	void SelectTxtIntro();
 	void SelectTxtBuy();
@@ -18,23 +19,13 @@ public:
 	void ShowConsole();
 	void WriteText();
 
-	
-
 private:
+	static ConsoleManager* instance;
+	ConsoleManager();
+
 	vector<string> txts;
-	enum StateGame
-	{
-		Intro,
-		Buy,
-		Prepare,
-		Sell,
-		Recap,
-		GameOver,
-	};
-	
-	
-	StateGame currentState = StateGame::Intro;
 	bool isWrittingStep = true;
+
 };
 
 #endif

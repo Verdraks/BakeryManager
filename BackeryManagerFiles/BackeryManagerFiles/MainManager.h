@@ -3,29 +3,49 @@
 
 #include "GlobalHeader.h"
 #include "Player.h"
-#include "ConsoleManager.h"
 
 class MainManager
 {
 public:
+
 	map<string, float> currentPriceIngredient;
+
+	enum StateGame
+	{
+		Intro,
+		Buy,
+		Prepare,
+		Sell,
+		Recap,
+		GameOver,
+	};
+
 
 	void RefreshPrice();
 	void ManageGame();
-	
-	MainManager();
+	void InteractionGame();
+	void SwitchState();
+	int GetDays();
 
+	MainManager::StateGame GetState();
+
+	static MainManager* GetInstance();
 	static float CalculRandomPrice();
 
 private:
+
+	static MainManager* instance;
+	MainManager();
+
+	StateGame currentState = StateGame::Intro;
+
 	Player player;
-	ConsoleManager consoleManager;
 	int day;
 	bool exitGame = false;
 
-	void IncrementDay();
 	bool CheckEndGame();
-	
+	void IncrementDay();
+	void SetGameOver();
 
 };
 #endif MainProgram_h

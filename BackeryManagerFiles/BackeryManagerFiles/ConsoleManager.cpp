@@ -1,62 +1,43 @@
 #include "ConsoleManager.h"
+#include "MainManager.h"
 
-void ConsoleManager::SetGameOver()
-{
-	this->currentState = StateGame::GameOver;
-}
 
-void ConsoleManager::SwitchState()
+ConsoleManager* ConsoleManager::GetInstance()
 {
-	switch (this->currentState)
-	{
-	case StateGame::Intro:
-		this->currentState = StateGame::Buy;
-		break;
-	case StateGame::Buy:
-		this->currentState = StateGame::Prepare;
-		break;
-	case StateGame::Prepare:
-		this->currentState = StateGame::Sell;
-		break;
-	case StateGame::Sell:
-		this->currentState = StateGame::Recap;
-		break;
-	case StateGame::Recap:
-		this->currentState = StateGame::Buy;
-		break;
-	case StateGame::GameOver:
-		break;
+	if (ConsoleManager::instance == NULL) {
+		ConsoleManager::instance = new ConsoleManager();
 	}
-	this->isWrittingStep = true;
+	return ConsoleManager::instance;
 }
+
 
 void ConsoleManager::SelectText() {
 	
-	switch (this->currentState)
+	switch (MainManager::GetInstance()->GetState())
 	{
-	case StateGame::Intro:
+	case MainManager::StateGame::Intro:
 		this->SelectTxtIntro();
 		break;
-	case StateGame::Buy:
+	case MainManager::StateGame::Buy:
 		this->SelectTxtBuy();
 		break;
-	case StateGame::Prepare:
+	case MainManager::StateGame::Prepare:
 		this->SelectTxtPrepare();
 		break;
-	case StateGame::Sell:
+	case MainManager::StateGame::Sell:
 		this->SelectTxtSell();
 		break;
-	case StateGame::Recap:
+	case MainManager::StateGame::Recap:
 		this->SelectTxtRecap();
 		break;
-	case StateGame::GameOver:
+	case MainManager::StateGame::GameOver:
 		this->SelectTxtGameOver();
 		break;
 	}
 }
 
 void ConsoleManager::SelectTxtIntro() {
-	this->txts = { "vdsgdsg","fesfse" };
+	this->txts = { "Hi guy and welcome to your new job ... BACKERY !","You have 3 things to do each days to run this buisness:","1) Buy ingredient to the market for create your recipes","2) Make meal of your card","3) Make people happy ! ", "That's all, good luck"};
 	this->WriteText();
 }
 
@@ -80,7 +61,7 @@ void ConsoleManager::SelectTxtRecap() {
 	this->WriteText();
 }
 void ConsoleManager::SelectTxtGameOver() {
-	this->txts = { "vdsgdsg","fesfse" };
+	this->txts = { "Oups, you have'nt enought money to run it, so i have to kill you to sell your organ..", ("Hey your finally dead, it's cool you survive " + to_string(MainManager::GetInstance()->GetDays()) + " days !"),"Be better next time !"};
 	this->WriteText();
 }
 
@@ -88,7 +69,7 @@ void ConsoleManager::SelectTxtGameOver() {
 void ConsoleManager::ShowConsole()
 {
 	system("cls");
-	this->SelectText();
+	//this->SelectText();
 }
 
 void ConsoleManager::WriteText()
@@ -98,7 +79,7 @@ void ConsoleManager::WriteText()
 		if (isWrittingStep) {
 			for (int j = 0; j < this->txts[i].size(); j++) {
 				cout << txts[i][j];
-				this_thread::sleep_for(150ms);
+				this_thread::sleep_for(50ms);
 			}
 		}
 		else {
