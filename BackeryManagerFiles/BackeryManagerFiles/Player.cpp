@@ -25,12 +25,14 @@ void Player::RemoveFurnitureInventory(string obj, const int quantity)
 	this->inventory[obj] = this->inventory.at(obj) - quantity;
 }
 
-void Player::TryBuySmth(string obj,float price, int quantity)
+bool Player::TryBuySmth(string obj,float price, int quantity)
 {
 	if (this->money >= quantity * price) {
 		this->BuyFurniture(quantity * price);
 		AddFurnitureInventory(obj, quantity);
+		return true;
 	}
+	return false;
 }
 
 bool Player::CheckFurnitureRequired(map<string,int> recipe) {

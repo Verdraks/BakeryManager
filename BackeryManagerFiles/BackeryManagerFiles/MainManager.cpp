@@ -92,27 +92,30 @@ void MainManager::BuyState() {
 	while (!finished) {
 		int quantity = -1;
 		auto tmpValues = this->currentPriceIngredient.begin();
+		cout << "What's your choice : 1) Baking Powder, 2) Cheese, 3) Egg, 4)Floor, 5) Olive " << endl;
 		key = _getch();
+
 		switch (key) {
 		case 38:
-			this->CheckInput(&quantity,tmpValues,&finished);
+
+			this->CheckInput(&quantity,tmpValues,&finished,"Baking Powder");
 			
 			break;
 		case 130:
 			tmpValues++;
-			this->CheckInput(&quantity, tmpValues, &finished);
+			this->CheckInput(&quantity, tmpValues, &finished,"Cheese");
 			break;
 		case 34:
 			tmpValues++;
-			this->CheckInput(&quantity, tmpValues, &finished);
+			this->CheckInput(&quantity, tmpValues, &finished,"Egg");
 			break;
 		case 39:
 			tmpValues++;
-			this->CheckInput(&quantity, tmpValues, &finished);
+			this->CheckInput(&quantity, tmpValues, &finished,"Floor");
 			break;
 		case 40:
 			tmpValues++;
-			this->CheckInput(&quantity, tmpValues, &finished);
+			this->CheckInput(&quantity, tmpValues, &finished,"Olive");
 			break;
 		default:
 			break;
@@ -120,23 +123,27 @@ void MainManager::BuyState() {
 	}
 }
 
-void MainManager::CheckInput(int *quantityInput, map<string,float>::iterator tmpValues,bool *finished) {
+void MainManager::CheckInput(int *quantityInput, map<string,float>::iterator tmpValues,bool *finished, string elementChoice) {
+	cout << "How many " << elementChoice << " do you want ?" << endl;
 	*quantityInput = stoi(to_string(cin.get()));
 
 	if (*quantityInput < 0) {
 		cout << "Error Syntax !" << endl;
-		this->CheckInput(quantityInput,tmpValues,finished);
-		return;
+		this->CheckInput(quantityInput,tmpValues,finished, elementChoice);
 	}
-	this->player.TryBuySmth(tmpValues->first, tmpValues->second, *quantityInput);
+	else 
+	{
+		if (this->player.TryBuySmth(tmpValues->first, tmpValues->second, *quantityInput)) cout << "You have purchase" << tmpValues->first << " " << *quantityInput << endl; else cout << "You don't have enoght money !";
 
-	cout << "Would you buy others things ? 0:No, 1:Yes" << endl;
-	string tmp = to_string(cin.get());
-	while ( tmp != "0" || "1") {
-		cout << "Error Syntax !" << endl;
-		tmp = to_string(cin.get());
+		cout << "Would you buy others things ? 0:No, 1:Yes" << endl;
+		string tmp = to_string(cin.get());
+		while (tmp != "0" || "1") {
+			cout << "Error Syntax !" << endl;
+			tmp = to_string(cin.get());
+		}
+		*finished = (tmp == "1");
 	}
-	*finished = (tmp == "1");
+	
 
 
 }

@@ -4,15 +4,15 @@
 
 int main(/*int argc, char* argv[]*/)
 {
-    string paths[] = { "F:\\Projects\\Programmation\\C++\\BakeryManager\\DatasRecipies.xml","F:\\Projects\\Programmation\\C++\\BakeryManager\\DatasIngredients.xml"};
+    string paths[] = { "C:\\Users\\o_martinez1\\Downloads\\BakeryManager\\DatasRecipies.xml","C:\\Users\\o_martinez1\\Downloads\\BakeryManager\\DatasIngredients.xml"};
 
     DataReader::GetInstance()->ReadingDataGame(paths);
-    MainManager::GetInstance();//->ManageGame();
+    MainManager::GetInstance()->ManageGame();
 
-    while (true) {
+    /*while (true) {
         auto c = _getch();
         cout << c << endl;
-    }
+    }*/
 
     /*Player player = *new Player();
     player.TryBuySmth("riz", 10,1);

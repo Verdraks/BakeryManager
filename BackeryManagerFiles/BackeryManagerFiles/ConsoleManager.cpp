@@ -84,7 +84,7 @@ void ConsoleManager::WriteText()
 		if (isWrittingStep) {
 			for (int j = 0; j < this->txts[i].size(); j++) {
 				cout << txts[i][j];
-				this_thread::sleep_for(50ms);
+				this_thread::sleep_for(5ms);
 			}
 		}
 		else {

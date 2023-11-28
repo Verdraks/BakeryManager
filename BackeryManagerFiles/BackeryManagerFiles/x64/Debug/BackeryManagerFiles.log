@@ -1,3 +1,5 @@
 ﻿  MainManager.cpp
-C:\Users\o_martinez1\Documents\BakeryManager\BackeryManagerFiles\BackeryManagerFiles\MainManager.cpp(9,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
-  BackeryManagerFiles.vcxproj -> C:\Users\o_martinez1\Documents\BakeryManager\BackeryManagerFiles\x64\Debug\BackeryManagerFiles.exe
+C:\Users\o_martinez1\Downloads\BakeryManager\BackeryManagerFiles\BackeryManagerFiles\MainManager.cpp(9,12): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned int', perte possible de données
+  Player.cpp
+  Génération de code en cours...
+  BackeryManagerFiles.vcxproj -> C:\Users\o_martinez1\Downloads\BakeryManager\BackeryManagerFiles\x64\Debug\BackeryManagerFiles.exe

@@ -25,7 +25,7 @@ public:
 	void ManageGame();
 	void InteractionGame();
 	void BuyState();
-	void CheckInput(int* quantityInput, map<string, float>::iterator tmpValues, bool* finished);
+	void CheckInput(int* quantityInput, map<string, float>::iterator tmpValues, bool* finished,string elementChoice);
 	void SwitchState();
 	int GetDays();
 

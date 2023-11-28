@@ -7,7 +7,7 @@ class Player
 {
 public:
 	float GetMoney();
-	void TryBuySmth(string obj,float price, int quantity);
+	bool TryBuySmth(string obj,float price, int quantity);
 
 	bool CheckFurnitureRequired(map<string, int> recipe);
 
